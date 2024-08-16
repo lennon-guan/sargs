@@ -36,7 +36,6 @@ func RunApp(commands ...Command) {
 
 func genName(cmd Command) string {
 	if cn, is := cmd.(CommandWithName); is {
-		fmt.Println("->", cn.Name())
 		return cn.Name()
 	}
 	typeName := reflect.TypeOf(cmd).Elem().Name()
